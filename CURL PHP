@@ -1,0 +1,76 @@
+// URL para onde será enviada a requisição GET
+$url_data = "http://localhost/curl/retorna_data.php";
+ 
+// Inicia a sessão cURL
+$ch = curl_init();
+ 
+// Informa a URL onde será enviada a requisição
+curl_setopt( $ch, CURLOPT_URL, $url_data);
+ 
+// Seta a requisição como sendo do tipo POST
+curl_setopt ($ch, CURLOPT_POST, 1);
+ 
+// Monta os parâmetros da requisição
+$parametros = 'parametro=data';
+ 
+// Seta os parâmetros para session cURL
+curl_setopt ($ch, CURLOPT_POSTFIELDS, $parametros);
+ 
+// Se true retorna o conteúdo em forma de string para uma variável
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+ 
+// Envia a requisição
+$result = curl_exec($ch);
+ 
+// Finaliza a sessão
+curl_close($ch);
+ 
+// Exibe o retorno da requisição
+var_dump($result);
+
+
+
+***********************POST****************************
+
+
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email={{ADICIONE%20SEU%20EMAILl}}&token={{ADICIONE%20SEU%20TOKEN}}",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+
+************************GET****************************
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://ws.sandbox.pagseguro.uol.com.br/payment-methods?amount={{ADICIONAR%20VALOR}}&sessionId={{ADICIONAR%20ID%20DE%20SESS%C3%83O}}",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(
+    "Accept: application/vnd.pagseguro.com.br.v1+json;charset=ISO-8859-1"
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
