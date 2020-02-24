@@ -1,0 +1,13 @@
+function getConnection()
+{
+   try {
+        
+        $conn = new PDO("mysql:host=localhost;dbname=".BANCO_CONFIG['dbname'],BANCO_CONFIG['username'],BANCO_CONFIG['passwd'], BANCO_CONFIG['options']);
+        
+        return $conn;
+      
+    } catch(PDOException $e) {
+        return 'ERROR CONN: ' . $e->getMessage();
+    }
+
+}
