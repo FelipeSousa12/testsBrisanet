@@ -1,0 +1,25 @@
+*** filtro por nome a partir da cidade ***
+
+URL: https://novorevan.brisanet.net.br/remoto/venda/cidade/contrato/dashboard?deslocamento=0&filtro=".$name."&limite=15&ordem=id&ordenador=asc
+FILTRO : {"cidade_id":2,"cancelado":false,"nome":"Raimundo Osvaldo"}
+
+
+*** Relatorio Financeiro - situação de clientes por cidade ***
+URL :https://novorevan.brisanet.net.br/remoto/relatorios/financeiro/situacao_contrato_cidade?deslocamento=0&filtro=%7B%22competencia%22:%2201%2F02%2F2020%22,%22base_categoria_id%22:1%7D&limite=15&ordem=nome&ordenador=asc
+FILTRO : {"competencia":"01/02/2020","base_categoria_id":1}
+
+*** Busca sem Filtro listando todas as cidades ***
+https://novorevan.brisanet.net.br/remoto/gerencia/admin/cidade/?deslocamento=0&filtro=%7B%7D&limite=15&ordem=id&ordenador=asc
+
+*** Busca com filtro Listando a cidade especifica ***
+https://novorevan.brisanet.net.br/remoto/gerencia/admin/cidade/?deslocamento=0&filtro=%7B%22nome%22:%22ico%22%7D&limite=15&ordem=id&ordenador=asc
+{"nome":"ico"}
+
+
+*** Busca de Clientes por nome ***
+https://novorevan.brisanet.net.br/remoto/venda/clienteV2/?deslocamento=0&filtro=%7B%22nome%22:%22Damiao+de+Lima+Guimaraes%22%7D&limite=15&ordem=id&ordenador=asc
+{"nome":"Damiao de Lima Guimaraes"}
+
+*** Busca por Planos/Servicos ***
+https://novorevan.brisanet.net.br/remoto/gerencia/admin/plano/?deslocamento=0&filtro=%7B%22id%22:%2227%22%7D&limite=15&ordem=id&ordenador=asc
+{"nome":"100 megas full"} ou {"id":"27"} = IPTV
